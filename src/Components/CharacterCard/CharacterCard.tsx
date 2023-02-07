@@ -20,8 +20,7 @@ const classes = {
     }
   };
 
-const CharacterCard = ({item}: any) => {
-    console.log(item);
+const CharacterCard = ({item}: any) => {    
     return(
         <Card sx={{ width: 450, margin: 1 }}>
             <Grid key={item.id} container >            

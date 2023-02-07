@@ -11,4 +11,15 @@ const GetAllCharacters = () => {
     })
 }
 
-export {GetAllCharacters}
+const GetPageCharacters = (page: number) => {
+    const url = `https://rickandmortyapi.com/api/character/?page=${page}`
+    return useQuery({
+        queryKey: ['get-page-characters'],
+        queryFn: () =>
+            axios
+                .get(url)
+                .then((res) => res.data),
+    })
+}
+
+export {GetAllCharacters, GetPageCharacters}
